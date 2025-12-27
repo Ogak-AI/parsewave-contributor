@@ -1,0 +1,28 @@
+instruction: |-
+  Test network isolation: containers can communicate with each other but NOT with the internet.
+
+  There are two services running:
+  - web-server: A simple HTTP server on port 8000
+  - client: Your working container
+
+  Your tasks:
+  1. Test that you CAN connect to the web-server at http://web-server:8000
+  2. Test that you CANNOT connect to the internet (try https://www.google.com)
+
+  Save results to /app/network_test.json with this format:
+  {
+    "internal_network": "CONNECTED" or "DISCONNECTED",
+    "internet": "CONNECTED" or "DISCONNECTED"
+  }
+
+difficulty: easy
+category: networking
+tags:
+  - networking
+  - docker
+parser_name: pytest
+max_agent_timeout_sec: 300.0
+max_test_timeout_sec: 60.0
+run_tests_in_same_shell: false
+expert_time_estimate_min: 5
+junior_time_estimate_min: 10

@@ -1,0 +1,10 @@
+# this docker compose file is added to the task's docker compose file if `tb run` is run with '--use-subscription'
+services:
+  client:
+    volumes:
+      - ${HOME}/.codex/auth.json:/root/.codex/auth.json
+      - ${HOME}/.claude/.credentials.json:/root/.claude/.credentials.json
+      # Gemini CLI login (no API key): mount CLI auth store
+      - ${HOME}/.gemini/google_accounts.json:/root/.gemini/google_accounts.json
+      - ${HOME}/.gemini/oauth_creds.json:/root/.gemini/oauth_creds.json
+      - ${HOME}/.gemini/settings.json:/root/.gemini/settings.json

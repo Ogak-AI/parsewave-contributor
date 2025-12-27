@@ -1,0 +1,23 @@
+#!/bin/bash
+
+apt-get update
+apt-get install -y curl
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+
+source "$HOME/.nvm/nvm.sh"
+
+nvm install 22
+npm -v
+
+npm install -g @openai/codex@{{ version }} 
+
+mkdir -p "$HOME/.codex"
+# If OPENAI_API_KEY is provided, write auth.json; otherwise assume host auth is mounted
+if [ -n "${OPENAI_API_KEY}" ]; then
+cat <<EOF >"$HOME/.codex/auth.json"
+{
+  "OPENAI_API_KEY": "${OPENAI_API_KEY}"
+}
+EOF
+fi

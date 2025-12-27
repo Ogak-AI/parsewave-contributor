@@ -1,0 +1,20 @@
+instruction: |-
+  Check if you have internet connectivity by running this command exactly once:
+
+  curl -s --max-time 5 https://www.google.com
+
+  Based on the result, create a file /app/internet_status.txt with one line:
+  - Write "CONNECTED" if the curl command succeeded
+  - Write "DISCONNECTED" if the curl command failed
+
+  Run the curl command only once. Do not retry.
+difficulty: easy
+category: networking
+tags:
+  - networking
+parser_name: pytest
+max_agent_timeout_sec: 300.0
+max_test_timeout_sec: 120.0
+run_tests_in_same_shell: false
+expert_time_estimate_min: 5
+junior_time_estimate_min: 10
