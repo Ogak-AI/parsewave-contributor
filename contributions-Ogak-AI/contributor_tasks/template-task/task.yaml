@@ -1,0 +1,12 @@
+instruction: |-
+  Create a file called /app/test.txt. Write "Ogak-AI is a rockstar developer" to it.
+difficulty: easy
+category: file-operations
+tags:
+  - file-operations
+parser_name: pytest
+max_agent_timeout_sec: 300.0
+max_test_timeout_sec: 120.0
+run_tests_in_same_shell: false
+expert_time_estimate_min: 5
+junior_time_estimate_min: 10
